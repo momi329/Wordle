@@ -10,8 +10,8 @@ const allData = [
     { letter: "T", state: "yellow" },
   ],
   [
-    { letter: "", state: "" },
-    { letter: "", state: "" },
+    { letter: "B", state: "typing" },
+    { letter: "B", state: "typing" },
     { letter: "", state: "" },
     { letter: "", state: "" },
     { letter: "", state: "" },
@@ -123,7 +123,7 @@ function App() {
           return element.map((item, num) => {
             if (item.state === "" && item.letter === "") {
               return <input type='text' className={inputStyle}></input>;
-            } else if (item.state === "" && item.letter !== "") {
+            } else if (item.state === "typing") {
               return (
                 <div
                   className='box-border w-16 h-16 border-solid border-2
