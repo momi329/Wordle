@@ -118,7 +118,7 @@ function App() {
       <h1 className='text-green-700 bg-green-500 text-center m-6'>
         MACY'S WORDLE
       </h1>
-      <div className='flex flex-row justify-center flex-wrap w-1/2 m-auto'>
+      <div className='flex flex-row justify-center flex-wrap w-96 m-auto'>
         {allData.map((element, index) => {
           return element.map((item, num) => {
             if (item.state === "" && item.letter === "") {
