@@ -9,6 +9,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 2rem;
+  font-family: "nyt-franklin";
+  font-family: "Libre Franklin", sans-serif;
 }
 
 code {
