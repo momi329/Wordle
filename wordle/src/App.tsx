@@ -30,9 +30,8 @@ function App() {
     ["", "", "", "", ""],
     ["", "", "", "", ""],
   ]);
-
+  const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const handleGuessChange = (index: number, num: number, input: string) => {
-    console.log(input);
     const newData = [...allData];
     newData[index][num] = input.toUpperCase();
     setAllData(newData);
@@ -42,6 +41,7 @@ function App() {
         : inputRefs.current[index][num + 1].focus();
     }
   };
+
   const keyChange = (
     index: number,
     num: number,
@@ -56,23 +56,25 @@ function App() {
           newState[index] = true;
           return newState;
         });
+        if (JSON.stringify(allData[index]) === JSON.stringify(answer)) {
+          setIsCorrect(true);
+        }
         inputRefs.current[index + 1][0].focus();
       }
     } else if (event.key === "Backspace") {
       const newData = [...allData];
-      console.log(`${index} ${num}`);
       newData[index][num] = "";
       setAllData(newData);
       if (num > 0) {
-        //inputRefs.current[index][num].current.blur();
         inputRefs.current[index][num - 1].focus();
       }
-      console.log("deleted");
     }
   };
+
   useEffect(() => {
     inputRefs.current[0][0]?.focus();
   }, []);
+
   return (
     <>
       <h1 className='text-green-700 bg-green-500 text-center m-6'>
@@ -80,6 +82,7 @@ function App() {
       </h1>
       <div className='flex flex-row justify-center flex-wrap w-96 m-auto'>
         {allData.map((element, index) => {
+          const correctIndex = currentLine.lastIndexOf(true);
           let stateClass: string = "";
           return element.map((item, num) => {
             if (item === "" && !currentLine[index]) {
@@ -125,6 +128,7 @@ function App() {
                       keyChange(index, num, e);
                     }}
                     value={item}
+                    readOnly={isCorrect}
                   />
                 ) : (
                   <input
