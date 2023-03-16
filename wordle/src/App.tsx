@@ -50,13 +50,13 @@ function App() {
     //輸入 退回 提交
     //輸入
     if (event.key === "Enter") {
-      if (allData[index].every((i: string) => i !== "")) {
+      if (allData[index].every((data: string) => data !== "")) {
         setCurrentLine((prev) => {
           const newState = [...prev];
           newState[index] = true;
           return newState;
         });
-        if (JSON.stringify(allData[index]) === JSON.stringify(answer)) {
+        if (allData[index].join("") === answer.join("")) {
           setIsCorrect(true);
         }
         inputRefs.current[index + 1][0].focus();
@@ -109,7 +109,6 @@ function App() {
                   <input
                     type='text'
                     maxLength={1}
-                    key={`${index}-${num}`}
                     className={`${stateClassName.boxStyle} ${stateClass}`}
                     ref={(input) => {
                       if (!inputRefs.current[index]) {
@@ -121,7 +120,6 @@ function App() {
                       const rule: RegExp = /^[A-Za-z]{1}$/;
                       if (rule.test(e.target.value)) {
                         handleGuessChange(index, num, e.target.value);
-                        e.target.value = e.target.value.toUpperCase();
                       }
                     }}
                     onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
