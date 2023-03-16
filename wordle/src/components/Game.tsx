@@ -84,6 +84,7 @@ function Game() {
         setCurrentLine((prev) => {
           const newState = [...prev];
           newState[index] = true;
+          inputRefs.current[index + 1][0].focus();
           return newState;
         });
         if (dataState[index].join("") === answer.join("")) {
