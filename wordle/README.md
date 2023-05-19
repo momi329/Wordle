@@ -1,7 +1,7 @@
 # Getting Started with Wordle
  - Implemented the world famous game Wordle within 2 days.
- - Designed a state data structure and implemented keyboard event handling.
- - Utilized the useReducer technique to manage complex state logic and data flow
+ - Designed a **state data structure** and implemented **keyboard event handling**.
+ - Utilized the **useReducer** technique to manage complex state logic and data flow
  
 🔗 Link｜[https://macy-wordle.web.app/](https://macy-wordle.web.app/)
 
