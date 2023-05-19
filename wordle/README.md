@@ -20,5 +20,9 @@
 ## Demo
 ![wordle](https://github.com/momi329/Wordle/assets/114843634/347692cc-ca52-47cc-bf7f-08af20e688d9)
 
+## 🔗 Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/macymacy/)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:amekaka@gmail.com)
+
 ## Answer💯
 ### HAPPY
